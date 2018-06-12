@@ -13,7 +13,7 @@ import { Ajax } from './ajax'
  * {
   "data": {
     "email": "string",
-    "id": 0,
+    "id": number,
     "password": "string"
   },
   "message": "string",
@@ -37,7 +37,7 @@ export function Register(params) {
  * {
   "data": {
     "email": "string",
-    "id": 0,
+    "id": number,
     "password": "string"
   },
   "message": "string",
