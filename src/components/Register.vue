@@ -51,7 +51,12 @@ export default {
         email,
         password
       }).then(res => {
-        // TODO return
+        if (!res || !res.data || res.data.status.toLowerCase() !== 'ok') {
+          this.msg = res.data.message
+          setTimeout(() => {
+            this.msg = ''
+          }, 3000)
+        }
       })
     }
   }
