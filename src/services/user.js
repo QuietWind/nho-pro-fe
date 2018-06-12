@@ -21,7 +21,7 @@ import { Ajax } from './ajax'
 }
  */
 export function Register(params) {
-  return Ajax('/api/user/register', params)
+  return Ajax('user/register', params)
 }
 
 /**
@@ -45,5 +45,5 @@ export function Register(params) {
 }
  */
 export function Login(params) {
-  return Ajax('/api/user/login', params)
+  return Ajax('user/login', params)
 }
