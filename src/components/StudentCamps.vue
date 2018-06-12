@@ -22,13 +22,14 @@
 
 <script>
 // import '@/assets/responsive.css'
-import campsRequester from '@/services/camps.js'
+import { GetCamps } from '@/services/camps.js'
 export default {
   name: 'StudentCamps',
   data() {
     return {
       msg: 'Choose your camps',
-      camps: [
+      camps: [],
+      camps2: [
         {
           id: '5',
           name: '中药爱好者',
@@ -69,13 +70,13 @@ export default {
   },
   methods: {
     onCampClick(id) {
-        this.$router.push({ name: 'HelloWorld', params: { id: id }})
+      this.$router.push({ name: 'TrainingCamp', params: { id: id } })
     }
   },
   beforeMount() {
-    // campsRequester.GetCamps().then(res => {
-    //   this.camps = res.data.clams
-    // })
+    GetCamps().then(res => {
+      this.camps = res.data.data.clams
+    })
   }
 }
 </script>
@@ -119,9 +120,9 @@ a {
 }
 
 .camp:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-.camp:active{
-    background-color: #36495d;
+.camp:active {
+  background-color: #36495d;
 }
 </style>
