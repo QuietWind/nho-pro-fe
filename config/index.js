@@ -9,7 +9,7 @@ const { env = {} } = args
 
 const apiProxyHost = env.p || 'localhost:8080'
 
-console.log('api proxy host address:',  apiProxyHost, env)
+console.log('api proxy host address:',  apiProxyHost)
 
 module.exports = {
   dev: {

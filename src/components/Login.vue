@@ -3,11 +3,11 @@
     <div class="center">
       <div class="login-wrapper">
         <b id="changeLoginMethod" class="cover-method"></b>
-        <div id="loginContentPc" class="pc-content" style="display: block;">
+        <div id="loginContentPc" class="pc-content">
           <h3>账户登录</h3>
           <div class="input-line">
-            <label for="" class="input-line--label iconfont icon-user" title="用户名"></label>
-            <input v-model="email" class="input-line--input" placeholder="用户名" type="text">
+            <label for="" class="input-line--label iconfont icon-user" title="邮箱"></label>
+            <input v-model="email" class="input-line--input" placeholder="邮箱" type="text">
           </div>
           <div class="input-line">
             <label for="" class="input-line--label iconfont icon-lock" title="密码"></label>
@@ -16,7 +16,7 @@
           <p class="error-info">{{msg}}</p>
           <p class="other-handle">
             <a href="" class="forget-password">忘记密码</a>
-            <a href="" class="quick-register">免费注册</a>
+            <router-link class="quick-register" :to="{name: 'register'}">快速注册</router-link>
           </p>
           <div class="input-hanlde-line">
             <button class="button" @click="submit()">登录</button>
