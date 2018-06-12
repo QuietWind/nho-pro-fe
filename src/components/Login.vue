@@ -7,11 +7,11 @@
           <h3>账户登录</h3>
           <div class="input-line">
             <label for="" class="input-line--label iconfont icon-user" title="用户名"></label>
-            <input class="input-line--input" placeholder="MobilePhone/UserName/Email" type="text">
+            <input v-model="email" class="input-line--input" placeholder="用户名" type="text">
           </div>
           <div class="input-line">
             <label for="" class="input-line--label iconfont icon-lock" title="密码"></label>
-            <input class="input-line--input" type="password">
+            <input v-model="password" class="input-line--input" placeholder="密码" type="password">
           </div>
           <p class="error-info">{{msg}}</p>
           <p class="other-handle">
@@ -19,7 +19,7 @@
             <a href="" class="quick-register">免费注册</a>
           </p>
           <div class="input-hanlde-line">
-            <button class="button">登录</button>
+            <button class="button" @click="submit()">登录</button>
           </div>
         </div>
       </div>
@@ -28,11 +28,31 @@
 </template>
 
 <script>
+import { Login } from './../services/user'
+
 export default {
   name: 'login',
   data() {
     return {
-      msg: ''
+      msg: '',
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    submit() {
+      const { email, password } = this
+      if (!email || !password) {
+        this.msg = '请输入正确的邮箱和密码'
+        return
+      }
+
+      Login({
+        email,
+        password
+      }).then(res => {
+        // TODO return
+      })
     }
   }
 }
