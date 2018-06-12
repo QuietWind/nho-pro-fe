@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import StudentCamps from '@/components/StudentCamps'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
+import Logout from '@/components/Logout'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: Logout
     }
   ]
 })

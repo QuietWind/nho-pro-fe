@@ -47,3 +47,7 @@ export function Register(params) {
 export function Login(params) {
   return Ajax('user/login', params)
 }
+
+export function Logout() {
+  return Ajax('user/logout')
+}
