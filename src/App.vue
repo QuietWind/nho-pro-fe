@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="https://www.thoughtworks.com/imgs/tw-logo.png">
     <router-view/>
   </div>
 </template>
