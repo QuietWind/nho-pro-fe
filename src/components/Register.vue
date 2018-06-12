@@ -11,7 +11,7 @@ export default {
   name: 'StudentCamps',
   data () {
     return {
-      msg: 'NHO front end project'
+      msg: 'Register Page'
     }
   }
 }
