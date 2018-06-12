@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export function Ajax(url, params, method = 'post') {
   const apiVersion = 'v1'
-
   const errorFn = err => {
     console.error(err)
     return err
@@ -11,8 +10,6 @@ export function Ajax(url, params, method = 'post') {
   if (!/^(https?|\/)/i.test(url)) {
     url = `/${apiVersion}/${url}`
   }
-
-  console.log(url)
 
   return axios({
     url,
