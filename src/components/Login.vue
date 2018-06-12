@@ -1,6 +1,5 @@
 <template>
   <div>
-    <img xlink:href="/assets/images/bg.jpg" alt="" class="bg-layout">
     <div class="center">
       <div class="login-wrapper">
         <b id="changeLoginMethod" class="cover-method"></b>
@@ -14,6 +13,7 @@
             <label for="" class="input-line--label iconfont icon-lock" title="密码"></label>
             <input class="input-line--input" type="password">
           </div>
+          <p class="error-info">{{msg}}</p>
           <p class="other-handle">
             <a href="" class="forget-password">忘记密码</a>
             <a href="" class="quick-register">免费注册</a>
@@ -29,10 +29,10 @@
 
 <script>
 export default {
-  name: 'StudentCamps',
+  name: 'login',
   data() {
     return {
-      msg: 'Login page'
+      msg: ''
     }
   }
 }
@@ -107,16 +107,6 @@ h3 {
   cursor: pointer;
 }
 
-.qrcode {
-  left: 0;
-  top: 0;
-}
-
-.pc {
-  right: 0;
-  bottom: 0;
-}
-
 .input-line {
   position: relative;
   margin: 20px 0 0;
@@ -130,7 +120,7 @@ h3 {
 .other-handle {
   position: relative;
   line-height: 18px;
-  margin: 20px 0 8px;
+  margin: 8px 0;
 }
 
 a {
@@ -201,5 +191,12 @@ a {
   &:hover {
     background-color: lighten(#4bb6ed, 5%);
   }
+}
+
+.error-info {
+  color: red;
+  font-size: 12px;
+  min-height: 20px;
+  line-height: 20px;
 }
 </style>
