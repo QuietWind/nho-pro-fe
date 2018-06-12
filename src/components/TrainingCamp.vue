@@ -18,6 +18,8 @@
 </template>
 
 <script>
+// import { GetCampDetail } from '@/services/camps.js'
+
 export default {
   name: 'TrainingCamp',
   data() {
@@ -37,6 +39,14 @@ export default {
         this.$router.push({ path: '/' })
       }, 500)
     }
+  },
+  beforeMount() {
+    var parentParams = this.$router.currentRoute.params
+    alert(parentParams.id)
+
+    // GetCampDetail().then(res => {
+    //   this.taskCards = res.data.data.clams
+    // })
   },
   mounted() {
     this.taskCards = [
