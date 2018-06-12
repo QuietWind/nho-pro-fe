@@ -35,18 +35,14 @@ export default {
       } else {
         this.$router.go(-1)
       }
-      setTimeout(() => {
-        this.$router.push({ path: '/' })
-      }, 500)
     }
   },
   beforeMount() {
     var parentParams = this.$router.currentRoute.params
-    alert(parentParams.id)
 
-    // GetCampDetail().then(res => {
-    //   this.taskCards = res.data.data.clams
-    // })
+    GetCampDetail({ id: parentParams.id }).then(res => {
+      this.taskCards = res.data.data.clams
+    })
   },
   mounted() {
     this.taskCards = [
@@ -72,35 +68,35 @@ export default {
         score: 72
       },
       {
-        id: 'izjsklvuwioe',
+        id: 'izjsklvuwioe2',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,
         score: 72
       },
       {
-        id: 'izjsklvuwioe',
+        id: 'izjsklvuwioe3',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,
         score: 72
       },
       {
-        id: 'izjsklvuwioe',
+        id: 'izjsklvuwioe4',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,
         score: 72
       },
       {
-        id: 'izjsklvuwioe',
+        id: 'izjsklvuwioe5',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,
         score: 72
       },
       {
-        id: 'izjsklvuwioe',
+        id: 'izjsklvuwioe6',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,

@@ -28,44 +28,7 @@ export default {
   data() {
     return {
       msg: 'Choose your camps',
-      camps: [],
-      camps2: [
-        {
-          id: '5',
-          name: '中药爱好者',
-          summary: '爱好采药、行医的同学欢迎参与',
-          startDate: '2018-11-02',
-          inNum: 8
-        },
-        {
-          id: '4',
-          name: '农业爱好者',
-          summary: '爱好插秧、种田的同学欢迎参与',
-          startDate: '2018-08-12',
-          inNum: 2
-        },
-        {
-          id: '3',
-          name: '天文爱好者',
-          summary: '爱好观象的同学欢迎参与',
-          startDate: '2018-06-22',
-          inNum: 22
-        },
-        {
-          id: '2',
-          name: '音乐爱好者',
-          summary: '爱好流行、民谣等曲风的同学欢迎参与',
-          startDate: '2018-06-31',
-          inNum: 31
-        },
-        {
-          id: '1',
-          name: '体育爱好者',
-          summary: '爱好篮球、乒乓球等运动的同学欢迎参与',
-          startDate: '2018-06-12',
-          inNum: 12
-        }
-      ]
+      camps: []
     }
   },
   methods: {
