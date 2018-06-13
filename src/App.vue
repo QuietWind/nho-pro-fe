@@ -37,5 +37,6 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow-y: auto;
 }
 </style>
