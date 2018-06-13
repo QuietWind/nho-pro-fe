@@ -23,14 +23,14 @@ export default {
   },
   mounted() {
     Logout().then(res => {
-        if(res && res.data && res.data.status == "OK") {
-          alert("成功退出");
-          // this.logoutStatus = "成功退出";
-        } else {
-          alert(res.data.message);
-          // this.logoutStatus = res.data.message;
-        }
-      })
+      if (res && res.data && res.data.status === 'OK') {
+        alert('成功退出')
+        // this.logoutStatus = "成功退出";
+      } else {
+        alert(res.data.message)
+        // this.logoutStatus = res.data.message;
+      }
+    })
   },
   methods: {
     backlogin: function() {
@@ -38,14 +38,13 @@ export default {
     }
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='postcss' scoped>
 .logout-info {
   margin-top: 20px;
-  text-align: center
+  text-align: center;
 }
 
 .button {
