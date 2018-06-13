@@ -4,6 +4,6 @@ export function GetCamps() {
   return Ajax('trainer', undefined, 'get')
 }
 
-export function GetCampDetail(params) {
-  return Ajax('trainer', params, 'get')
+export function GetCampDetail(trainerClamId) {
+  return Ajax('trainer/' + trainerClamId, undefined, 'get')
 }
