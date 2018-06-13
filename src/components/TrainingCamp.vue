@@ -1,24 +1,24 @@
 <template>
+  <div>
+    <button v-on:click="back">返回</button>
     <div class="camps">
-      <button v-on:click="back">返回</button>
-      <h2>任务卡</h2>
-        <div  v-for="item in taskCards" :key="item.id" class="col-md-4 col-sm-4 col-xs-4 camp">
+        <div class="col-md-4 col-sm-4 col-xs-4 camp" v-for="item in taskCards" v-bind:key="item.id">
             <div class="row">
-                <div class="col-md-4 col-sm-3">姓名：</div><div class="col-md-8 col-sm-9 value">{{item.name}}</div>
+                <div class="col-md-4 col-sm-4 col-xs-4">姓名：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.name}}</div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-3">描述：</div><div class="col-md-8 col-sm-9 value">{{item.description}}</div>
+                <div class="col-md-4 col-sm-4 col-xs-4">描述：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.description}}</div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-3">得分：</div><div class="col-md-8 col-sm-9 value">{{item.score}}</div>
+                <div class="col-md-4 col-sm-4 col-xs-4">得分：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.score}}</div>
             </div>
         </div>
-
+    </div>
   </div>
 </template>
 
 <script>
-// import { GetCampDetail } from '@/services/camps.js'
+import { GetCampDetail } from '@/services/camps.js'
 
 export default {
   name: 'TrainingCamp',
@@ -36,13 +36,6 @@ export default {
         this.$router.go(-1)
       }
     }
-  },
-  beforeMount() {
-    var parentParams = this.$router.currentRoute.params
-
-    GetCampDetail({ id: parentParams.id }).then(res => {
-      this.taskCards = res.data.data.clams
-    })
   },
   mounted() {
     this.taskCards = [
@@ -103,25 +96,11 @@ export default {
         score: 72
       }
     ]
+
+    var parentParams = this.$router.currentRoute.params
+    GetCampDetail(parentParams.id).then(res => {
+      this.taskCards = res.data.data.taskCards
+    })
   }
 }
 </script>
-
-<!-- Add 'scoped' attribute to limit CSS to this component only -->
-<style scoped>
-.camp {
-  height: 100px;
-  background-color: #47b784;
-  border: solid 1px black;
-  margin-top: 10px;
-}
-
-.camp > div {
-  width: 100%;
-  margin-top: 5px;
-}
-
-.camp .value {
-  text-align: left;
-}
-</style>
