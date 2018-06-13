@@ -57,7 +57,7 @@ export default {
             this.msg = ''
           }, 3000)
         } else {
-          localStorage.setItem('user_info', JSON.stringify(res.data.data))
+          sessionStorage.setItem('user_info', JSON.stringify(res.data.data))
           this.$router.push({ name: 'index' })
         }
       })

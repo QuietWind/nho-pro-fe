@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    const userInfo = localStorage.getItem('user_info')
+    const userInfo = sessionStorage.getItem('user_info')
     if (userInfo) {
       this.info = JSON.parse(userInfo)
     }

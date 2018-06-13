@@ -24,13 +24,13 @@ export default {
   mounted() {
     Logout().then(res => {
       if (res && res.data && res.data.status === 'OK') {
+        sessionStorage.removeItem('user_info')
         alert('成功退出')
         // this.logoutStatus = "成功退出";
       } else {
         alert(res.data.message)
         // this.logoutStatus = res.data.message;
       }
-      localStorage.removeItem('user_info')
     })
   },
   methods: {
