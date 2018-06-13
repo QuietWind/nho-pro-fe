@@ -99,7 +99,11 @@ export default {
 
     var parentParams = this.$router.currentRoute.params
     GetCampDetail(parentParams.id).then(res => {
-      this.taskCards = res.data.data.taskCards
+      if (res.data.status === 'FAIL') {
+        this.$router.push({ name: 'login' })
+      } else {
+        this.taskCards = res.data.data.taskCards
+      }
     })
   }
 }

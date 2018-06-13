@@ -34,7 +34,11 @@ export default {
   },
   mounted() {
     GetCamps().then(res => {
-      this.camps = res.data.data.clams
+      if (res.data.status === 'FAIL') {
+        this.$router.push({ name: 'login' })
+      } else {
+        this.camps = res.data.data.clams
+      }
     })
   }
 }

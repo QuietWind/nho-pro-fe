@@ -57,6 +57,7 @@ export default {
   border: 2px solid #ddd;
   margin: 0 0 12px;
   min-width: 250px;
+  min-height: 200px;
 }
 
 .camp > div {
