@@ -1,5 +1,8 @@
 <template>
   <div class="index-page" v-bind:style='{backgroundImage: "url(" + bgImg  + ")" }'>
+    <div class="pages">
+      <li  class="item" v-for="item in items" v-bind:key="item.name">{{ item.title }}</li>
+    </div>
   </div>
 </template>
 
@@ -10,12 +13,14 @@ const bgImgs = [
   'https://drscdn.500px.org/photo/258292485/q%3D80_m%3D2000/v2?webp=true&sig=9bd8a247a13ff87d7102595333049c98aa02e50e6b959da941c74200bd5f4546',
   'https://drscdn.500px.org/photo/259084631/q%3D80_m%3D2000/v2?webp=true&sig=4fbff7e00c3b69dca6923afdc5cd69f2c044e90b4eff842bab99c5f245fe6136'
 ]
+import { Routes } from './../router/index'
 
 export default {
   name: 'HelloWorld',
   data() {
     return {
-      bgImg: bgImgs[Math.floor(Math.random() * bgImgs.length)]
+      bgImg: bgImgs[Math.floor(Math.random() * bgImgs.length)],
+      items: Routes
     }
   }
 }
@@ -32,5 +37,26 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 50px 0;
+}
+
+.pages {
+  max-width: 800px;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  width: 33.3333%;
+  line-height: 100px;
+  height: 100px;
+  border: 2px solid #ddd;
+  margin: 0 0 12px;
+  text-align: center;
 }
 </style>

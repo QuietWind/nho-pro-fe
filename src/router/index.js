@@ -12,22 +12,26 @@ Vue.use(Router)
 export const Routes = [
   {
     path: '/',
-    name: 'HelloWorld',
+    name: 'index',
+    title: '首页',
     component: Index
   },
   {
     path: '/camps',
     name: 'StudentCamps',
+    title: '首页',
     component: StudentCamps
   },
   {
     path: '/register',
     name: 'register',
+    title: '我要注册',
     component: Register
   },
   {
     path: '/login',
     name: 'login',
+    title: '我要登录',
     component: Login
   },
    {
