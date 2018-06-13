@@ -61,5 +61,6 @@ export default {
   border: 2px solid #ddd;
   margin: 0 0 12px;
   text-align: center;
+  box-sizing: border-box;
 }
 </style>
