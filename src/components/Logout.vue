@@ -5,7 +5,7 @@
         {{logoutStatus}}
       </div>
       <div class="input-hanlde-line">
-            <button class="button" @click="backlogin">返回登录</button>
+            <button class="button" @click="backlogin">返回首页</button>
           </div>
     </div>
   </div>
