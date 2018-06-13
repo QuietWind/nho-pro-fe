@@ -37,13 +37,6 @@ export default {
       }
     }
   },
-  beforeMount() {
-    var parentParams = this.$router.currentRoute.params
-
-    GetCampDetail({ trainerClamId: parentParams.id }).then(res => {
-      this.taskCards = res.data.data.taskCards
-    })
-  },
   mounted() {
     this.taskCards = [
       {
@@ -103,6 +96,12 @@ export default {
         score: 72
       }
     ]
+
+    var parentParams = this.$router.currentRoute.params
+
+    GetCampDetail(parentParams.id).then(res => {
+      this.taskCards = res.data.data.taskCards
+    })
   }
 }
 </script>
