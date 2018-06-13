@@ -18,7 +18,7 @@
 </template>
 
 <script>
-// import { GetCampDetail } from '@/services/camps.js'
+import { GetCampDetail } from '@/services/camps.js'
 
 export default {
   name: 'TrainingCamp',
@@ -97,10 +97,10 @@ export default {
       }
     ]
 
-    // var parentParams = this.$router.currentRoute.params
-    // GetCampDetail(parentParams.id).then(res => {
-    //   this.taskCards = res.data.data.taskCards
-    // })
+    var parentParams = this.$router.currentRoute.params
+    GetCampDetail(parentParams.id).then(res => {
+      this.taskCards = res.data.data.taskCards
+    })
   }
 }
 </script>
