@@ -1,34 +1,15 @@
 <template>
   <div>
     <div class="center">
-      <div class="login-wrapper">
-        <b id="changeLoginMethod" class="cover-method"></b>
-        <div id="loginContentPc" class="pc-content">
-          <h3>账户登录</h3>
-          <div class="input-line">
-            <label for="" class="input-line--label iconfont icon-user" title="邮箱"></label>
-            <input v-model="email" class="input-line--input" placeholder="邮箱" type="text">
-          </div>
-          <div class="input-line">
-            <label for="" class="input-line--label iconfont icon-lock" title="密码"></label>
-            <input v-model="password" class="input-line--input" placeholder="密码" type="password">
-          </div>
-          <p class="error-info">{{msg}}</p>
-          <p class="other-handle">
-            <a href="" class="forget-password">忘记密码</a>
-            <router-link class="quick-register" :to="{name: 'register'}">快速注册</router-link>
-          </p>
-          <div class="input-hanlde-line">
-            <button class="button" @click="submit()">登录</button>
-          </div>
-        </div>
+      <div>
+        <button class="button" @click="logout()">退出登录</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Login } from './../services/user'
+import { Logout } from './../services/user'
 
 export default {
   name: 'login',
@@ -40,24 +21,13 @@ export default {
     }
   },
   methods: {
-    submit() {
-      const { email, password } = this
-      if (!email || !password) {
-        this.msg = '请输入正确的邮箱和密码'
-        return
-      }
-
-      Login({
-        email,
-        password
-      }).then(res => {
-        if (!res || !res.data || res.data.status.toLowerCase() !== 'ok') {
-          this.msg = res.data.message
-          setTimeout(() => {
-            this.msg = ''
-          }, 3000)
+    logout() {
+      Logout({}).then(res => {
+        console.log(res)
+        if (res.data.status === 'OK') {
+          alert('成功退出')
         } else {
-          this.$router.push({name: 'index'})
+          alert(res.data.message)
         }
       })
     }
