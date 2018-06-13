@@ -1,7 +1,9 @@
 <template>
   <div class="index-page" v-bind:style='{backgroundImage: "url(" + bgImg  + ")" }'>
     <div class="pages">
-      <li  class="item" v-for="item in items" v-bind:key="item.name">{{ item.title }}</li>
+      <li  class="item" v-for="item in items" v-bind:key="item.name">
+        <router-link :to="{name: item.name}">{{ item.title }}</router-link>
+      </li>
     </div>
   </div>
 </template>

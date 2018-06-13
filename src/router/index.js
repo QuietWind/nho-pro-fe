@@ -19,7 +19,7 @@ export const Routes = [
   {
     path: '/camps',
     name: 'StudentCamps',
-    title: '首页',
+    title: '学生训练营',
     component: StudentCamps
   },
   {
