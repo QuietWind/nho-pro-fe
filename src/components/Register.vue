@@ -56,6 +56,8 @@ export default {
           setTimeout(() => {
             this.msg = ''
           }, 3000)
+        } else {
+          this.$router.push({name: 'index'})
         }
       })
     }
