@@ -89,8 +89,7 @@ export default {
         score: 72
       },
       {
-        id: "izjsklvuwioe6",
-
+        id: 'izjsklvuwioe6',
         name: 'saller',
         description: '这是描述，不知道',
         status: 1,
