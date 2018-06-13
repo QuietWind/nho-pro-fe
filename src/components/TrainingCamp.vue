@@ -2,15 +2,18 @@
   <div>
     <button v-on:click="back">返回</button>
     <div class="camps">
-        <div class="col-md-4 col-sm-4 col-xs-4 camp" v-for="item in taskCards" v-bind:key="item.id">
+        <div class="col-md-12 col-sm-12 col-xs-12 camp">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4">姓名：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.name}}</div>
+                <div class="col-md-3 col-sm-3 col-xs-3">训练营名称：</div><div class="col-md-9 col-sm-9 col-xs-9 value">{{camp.name}}</div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4">描述：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.description}}</div>
+                <div class="col-md-3 col-sm-3 col-xs-3">开始时间：</div><div class="col-md-9 col-sm-9 col-xs-9 value">{{camp.startDate}}</div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4">得分：</div><div class="col-md-8 col-sm-8 col-xs-8 value">{{item.score}}</div>
+                <div class="col-md-3 col-sm-3 col-xs-3">简介：</div><div class="col-md-9 col-sm-9 col-xs-9 value">{{camp.summary}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">描述：</div><div class="col-md-9 col-sm-9 col-xs-9 value">{{camp.desc}}</div>
             </div>
         </div>
     </div>
@@ -24,7 +27,7 @@ export default {
   name: 'TrainingCamp',
   data() {
     return {
-      taskCards: []
+      camp: {}
     }
   },
   methods: {
@@ -38,71 +41,12 @@ export default {
     }
   },
   mounted() {
-    this.taskCards = [
-      {
-        id: 'kasdjfaldjfksdjfkladk',
-        name: 'john',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 100
-      },
-      {
-        id: 'sdfoizjscovzklnwefn',
-        name: 'tom',
-        description: '这是描述，不知道',
-        status: 2,
-        score: 99
-      },
-      {
-        id: 'izjsklvuwioe',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      },
-      {
-        id: 'izjsklvuwioe2',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      },
-      {
-        id: 'izjsklvuwioe3',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      },
-      {
-        id: 'izjsklvuwioe4',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      },
-      {
-        id: 'izjsklvuwioe5',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      },
-      {
-        id: 'izjsklvuwioe6',
-        name: 'saller',
-        description: '这是描述，不知道',
-        status: 1,
-        score: 72
-      }
-    ]
-
     var parentParams = this.$router.currentRoute.params
     GetCampDetail(parentParams.id).then(res => {
       if (res.data.status === 'FAIL') {
         this.$router.push({ name: 'login' })
       } else {
-        this.taskCards = res.data.data.taskCards
+        this.camp = res.data.data
       }
     })
   }
