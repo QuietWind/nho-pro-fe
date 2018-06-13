@@ -57,7 +57,8 @@ export default {
             this.msg = ''
           }, 3000)
         } else {
-          this.$router.push({name: 'index'})
+          localStorage.setItem('user_info', JSON.stringify(res.data.data))
+          this.$router.push({ name: 'index' })
         }
       })
     }

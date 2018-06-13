@@ -30,6 +30,7 @@ export default {
         alert(res.data.message)
         // this.logoutStatus = res.data.message;
       }
+      localStorage.removeItem('user_info')
     })
   },
   methods: {

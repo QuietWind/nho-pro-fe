@@ -1,6 +1,9 @@
 <template>
   <div id="app" v-bind:style='{backgroundImage: "url(" + bgImg  + ")" }'>
-    <router-link class="back-home" :to="{name: 'index'}">首页</router-link>
+    <p class="info-line">
+      <router-link class="back-home" :to="{name: 'index'}">首页</router-link>
+      <span v-if="info">{{info.email}}</span>
+    </p>
     <router-view/>
   </div>
 </template>
@@ -17,7 +20,14 @@ export default {
   name: 'App',
   data() {
     return {
+      info: undefined,
       bgImg: bgImgs[Math.floor(Math.random() * bgImgs.length)]
+    }
+  },
+  created() {
+    const userInfo = localStorage.getItem('user_info')
+    if (userInfo) {
+      this.info = JSON.parse(userInfo)
     }
   }
 }
@@ -83,5 +93,9 @@ export default {
   padding: 12px;
   margin: 0 20px;
   background-color: #fff;
+}
+
+.info-line {
+  color: #4f9fff;
 }
 </style>
