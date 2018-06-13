@@ -1,5 +1,6 @@
 <template>
   <div id="app" v-bind:style='{backgroundImage: "url(" + bgImg  + ")" }'>
+    <router-link class="back-home" :to="{name: 'index'}">首页</router-link>
     <router-view/>
   </div>
 </template>
@@ -28,6 +29,8 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
+
+  padding: 100px 0;
 
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -70,5 +73,14 @@ export default {
 }
 .camp:active {
   background-color: #36495d;
+}
+
+.back-home {
+  display: inline-block;
+  font-size: 16px;
+  color: #4f9fff;
+  padding: 12px;
+  margin: 0 20px;
+  background-color: #fff;
 }
 </style>

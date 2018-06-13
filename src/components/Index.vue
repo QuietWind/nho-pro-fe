@@ -43,7 +43,7 @@ export default {
   line-height: 100px;
   height: 100px;
   border: 2px solid #ddd;
-  margin: 0 0 12px;
+  margin: 0 0 30px;
   text-align: center;
   box-sizing: border-box;
 }
