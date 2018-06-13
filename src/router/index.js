@@ -34,18 +34,18 @@ export const Routes = [
     title: '我要登录',
     component: Login
   },
-   {
-      path: '/logout',
-      name: 'logout',
-      title: '登出账户',
-      component: Logout
-    },
-    {
-      path: '/trainingCamp',
-      name: 'TrainingCamp',
-      title: '训练营',
-      component: TrainingCamp
-    }
+  {
+    path: '/logout',
+    name: 'logout',
+    title: '登出账户',
+    component: Logout
+  },
+  {
+    path: '/trainingCamp',
+    name: 'TrainingCamp',
+    title: '训练营',
+    component: TrainingCamp
+  }
 ]
 
 export default new Router({

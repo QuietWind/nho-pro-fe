@@ -18,7 +18,7 @@
 </template>
 
 <script>
-// import { GetCampDetail } from '@/services/camps.js'
+import { GetCampDetail } from '@/services/camps.js'
 
 export default {
   name: 'TrainingCamp',

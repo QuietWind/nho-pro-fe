@@ -22,12 +22,10 @@ export default {
   },
   methods: {
     logout() {
-      Logout({
-       
-      }).then(res => {
+      Logout({}).then(res => {
         console.log(res)
-        if(res.data.status == "OK") {
-          alert("成功退出")
+        if (res.data.status === 'OK') {
+          alert('成功退出')
         } else {
           alert(res.data.message)
         }
