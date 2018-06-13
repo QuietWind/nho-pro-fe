@@ -96,7 +96,6 @@ export default {
         score: 72
       }
     ]
-    
 
     var parentParams = this.$router.currentRoute.params
 
