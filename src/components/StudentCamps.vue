@@ -39,38 +39,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.camps {
-  margin: 0 10px;
-  overflow: hidden;
-}
-
-.camp {
-  background-color: #fff;
-  border: solid 1px black;
-  color: #333;
-  font-size: 16px;
-  line-height: 25px;
-  border: 2px solid #ddd;
-  margin: 0 0 12px;
-  min-width: 250px;
-}
-
-.camp > div {
-  width: 100%;
-  margin-top: 5px;
-}
-
-.camp .value {
-  text-align: left;
-}
-
-.camp:hover {
-  cursor: pointer;
-}
-.camp:active {
-  background-color: #36495d;
-}
-</style>
