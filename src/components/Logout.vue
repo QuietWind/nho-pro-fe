@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="center">
-      <div class="logout-info">
-        {{logoutStatus}}
-      </div>
+      <!-- <div class="logout-info">
+        <sapn style="color: white">{{logoutStatus}}</span>
+      </div> -->
       <div class="input-hanlde-line">
             <button class="button" @click="backlogin">返回首页</button>
           </div>
@@ -24,9 +24,11 @@ export default {
   mounted() {
     Logout().then(res => {
         if(res && res.data && res.data.status == "OK") {
-          this.logoutStatus = "成功退出";
+          alert("成功退出");
+          // this.logoutStatus = "成功退出";
         } else {
-          this.logoutStatus = res.data.message;
+          alert(res.data.message);
+          // this.logoutStatus = res.data.message;
         }
       })
   },
@@ -61,7 +63,8 @@ export default {
   transition: all 350ms ease-in;
   color: #fff;
   border-radius: 2px;
-  cursor: pointer
+  cursor: pointer;
+  margin: 30px auto;
 }
 
 .input-hanlde-line {
